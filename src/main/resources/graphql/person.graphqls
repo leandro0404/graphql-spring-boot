@@ -3,6 +3,7 @@ type Person{
     name: String,
     age: Int,
     gender: Gender
+    documents : [Document]
 }
 
 
@@ -17,13 +18,3 @@ input PersonInput{
     gender: Gender
 }
 
-
-
-type Query{
-    findAllPeople: [Person]
-    findPersonById(id: Int): Person
-}
-
-type Mutation{
-    savePerson(person: PersonInput): Person
-}

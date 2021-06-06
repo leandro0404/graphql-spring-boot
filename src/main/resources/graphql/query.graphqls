@@ -1,0 +1,6 @@
+
+type Query{
+    findAllPeople: [Person]
+    #busca pessoa por id
+    findPersonById(id: Int): Person
+}

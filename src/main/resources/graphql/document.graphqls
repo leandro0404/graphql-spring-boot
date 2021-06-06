@@ -1,0 +1,18 @@
+type Document {
+    id: ID!,
+    number : String,
+    type : DocumentType
+
+}
+
+enum DocumentType
+{
+    CPF , RG , PIS
+}
+
+input  DocumentInput {
+    number : String,
+    type : DocumentType,
+    ownerId : Int
+
+}

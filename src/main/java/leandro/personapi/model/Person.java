@@ -1,13 +1,14 @@
 package leandro.personapi.model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Collection;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @Entity
 @Table( name = "person")
@@ -24,6 +25,9 @@ public class Person {
     @Enumerated(EnumType.STRING)
     @Column( name = "Gender")
     private Gender gender;
+
+    @OneToMany(mappedBy = "owner")
+    private Collection<Document> documents;
 
     public Person(String name ,  int age,  Gender gender )
     {

@@ -24,11 +24,18 @@ public class PersonResolver implements GraphQLQueryResolver, GraphQLMutationReso
     }
 
     public Person findPersonById(Long id){
-        return repository.findById(id).get();
+        var person =  repository.findById(id).get();
+        return person;
     }
 
     public Person savePerson(PersonInput input){
         return repository.save(new Person(input.getName(), input.getAge(), input.getGender()));
     }
 
+    public Person updateAge (Long id, int age)
+    {
+        var person = repository.findById(id).get();
+        person.setAge(age);
+        return repository.save(person);
+    }
 }

@@ -1,0 +1,6 @@
+
+type Mutation{
+    savePerson(person: PersonInput): Person
+    updateAge(personId : Int , age : Int) : Person
+    saveDocument (document: DocumentInput ) : Document
+}
